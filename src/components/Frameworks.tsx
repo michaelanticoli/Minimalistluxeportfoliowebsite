@@ -7,7 +7,7 @@ const frameworks: FrameworkData[] = [
   {
     title: "Quantumelodies",
     subtitle: "Harmonic System Design",
-    description: "Translating planetary motion into harmonic structure, bridging astronomy, mathematics, and emotional resonance.",
+    description: "An experimental harmonic system translating planetary motion into musical structure—exploring the intersection of astronomy, mathematics, and emotional resonance.",
     longDescription: "Quantumelodies operates on the premise that the solar system is a macro-musical instrument. By assigning pitch classes to planetary positions and using angular relationships (aspects) to determine harmonic intervals, we create a sonic map of any given moment in time. This system moves beyond the 'superstition' of astrology and into the rigorous study of time, cycles, and archetypal data visualization.",
     href: "https://quantumelodies.com",
     features: [
@@ -17,7 +17,9 @@ const frameworks: FrameworkData[] = [
       "Archetypal Data Visualization"
     ],
     images: [
-      "https://images.unsplash.com/photo-1578433805614-747d066afebe?q=80&w=1080", // Sacred Geo
+      "figma:asset/29f617ea2006006fb272d2b5d6c44f083bd6b687.png",
+      "figma:asset/de7fa817407f69556d10249bd830e6ecf16c78c2.png",
+      "https://imgur.com/a/6mR14jG", // Sacred Geo
       "https://images.unsplash.com/photo-1637434325847-7bb5b9ecde33?q=80&w=1080", // Celestial Map
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1080", // Star Field
       "https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=1080", // Galaxy
@@ -49,7 +51,7 @@ const frameworks: FrameworkData[] = [
     subtitle: "Strategic Ecosystems",
     description: "A professional methodology for building brand ecosystems that align message, medium, and human meaning.",
     longDescription: "Brand Alchemy is the process of transmutation applied to business identity. It moves a brand from 'Base Matter' (unrefined product/service) through 'Purification' (market positioning and core values) to 'Illumination' (visual and verbal identity). The result is a cohesive system that breathes and adapts, rather than a static logo.",
-    href: "https://creativealchemy.xyz",
+    href: "https://roaring-kleicha-d0d21b.netlify.app",
     features: [
       "Archetypal Brand Strategy",
       "Visual Identity Systems",
@@ -66,7 +68,7 @@ const frameworks: FrameworkData[] = [
   },
   {
     title: "Moontuner",
-    subtitle: "Chronobiological Design",
+    subtitle: "Chronobiological Exploration",
     description: "An experimental system exploring how human creative cycles align with celestial timing and lunar phases.",
     longDescription: "Moontuner is a chronobiological productivity tool. It posits that human energy is not linear but cyclical, much like the tides. By tracking lunar phase and sign, Moontuner suggests optimal times for 'Input' (gathering inspiration) vs. 'Output' (execution), helping creatives align their workflow with natural rhythms.",
     href: "https://moontuner.xyz",
@@ -117,11 +119,11 @@ const frameworks: FrameworkData[] = [
       "Generative Art Output"
     ],
     images: [
-      "https://images.unsplash.com/photo-1709255230141-f8566cfb9d0e?q=80&w=1080", // Prism
-      "https://images.unsplash.com/photo-1708310887176-90f95bce226c?q=80&w=1080", // Spectrum
-      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=1080", // Space/Color
-      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1080", // Dark Fluid
-      "https://images.unsplash.com/photo-1504707748692-419802cf939d?q=80&w=1080"  // Abstract Paint
+      "figma:asset/c32e372a54ff0649e322c44da56c9a21b91b2754.png",
+      "figma:asset/4f54459ab6c250dec6acb9fc3386f89c4b00dadc.png",
+      "figma:asset/9b37edc72d6860e4feac18771acf13ba65f3a9e6.png",
+      "figma:asset/c32e372a54ff0649e322c44da56c9a21b91b2754.png",
+      "figma:asset/9b37edc72d6860e4feac18771acf13ba65f3a9e6.png"
     ]
   }
 ];

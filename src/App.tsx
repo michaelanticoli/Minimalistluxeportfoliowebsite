@@ -440,7 +440,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-muted-foreground">
           <div className="flex items-center gap-3">
             <LunarPhase />
-            <span>© 2026 — Crafted with intention</span>
+            <span>© 2026 — Crafted by a human being.</span>
           </div>
           <div className="text-sm tracking-widest uppercase">
             Michael Anticoli • V1.0
