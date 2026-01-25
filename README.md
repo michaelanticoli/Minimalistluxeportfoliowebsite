@@ -1,7 +1,7 @@
 
-  # Minimalist Luxe Portfolio Website
+  # Michael Anticoli - Sound, Story, Strategy
 
-  This is a code bundle for Minimalist Luxe Portfolio Website. The original project is available at https://www.figma.com/design/bDr1UxXTxplNkADEtEyccQ/Minimalist-Luxe-Portfolio-Website.
+  This is a code bundle for Michael Anticoli - Sound, Story, Strategy. The original project is available at https://www.figma.com/design/bDr1UxXTxplNkADEtEyccQ/Michael-Anticoli---Sound--Story--Strategy.
 
   ## Running the code
 

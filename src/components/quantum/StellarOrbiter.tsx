@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { Play, Pause, RotateCcw, Settings, ExternalLink, Sparkles } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../ui/dialog";
 import { Slider } from "../ui/slider";
 import { Button } from "../ui/button";
 
@@ -474,6 +474,9 @@ export function StellarOrbiter() {
                   <span className="text-3xl">{selectedPlanet.symbol}</span>
                   {selectedPlanet.name}
                 </DialogTitle>
+                <DialogDescription className="sr-only">
+                  Detailed harmonic and astrological data for {selectedPlanet.name}
+                </DialogDescription>
               </DialogHeader>
               <div className="space-y-6 mt-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">

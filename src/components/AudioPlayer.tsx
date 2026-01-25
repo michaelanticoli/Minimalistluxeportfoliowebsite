@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { projectId, publicAnonKey } from "../utils/supabase/info";
 
 interface AudioPlayerProps {
   src: string;
@@ -15,12 +16,46 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
   const [frequencyData, setFrequencyData] = useState<Uint8Array>(new Uint8Array(32));
   const [waveformData, setWaveformData] = useState<Uint8Array>(new Uint8Array(64));
   const [dominantFrequency, setDominantFrequency] = useState(0);
+  const [audioUrl, setAudioUrl] = useState<string>("");
+  const [loadingUrl, setLoadingUrl] = useState(true);
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const sourceRef = useRef<MediaElementAudioSourceNode | null>(null);
   const animationFrameRef = useRef<number>();
+
+  // Fetch signed URL from Supabase Storage
+  useEffect(() => {
+    const fetchAudioUrl = async () => {
+      try {
+        setLoadingUrl(true);
+        // Extract filename from src (e.g., "/audio/persona1.mp3" -> "persona1.mp3")
+        const fileName = src.replace(/^\/audio\//, "");
+        
+        const API_BASE = `https://${projectId}.supabase.co/functions/v1/make-server-b5eacdbd`;
+        const response = await fetch(`${API_BASE}/audio/${encodeURIComponent(fileName)}`, {
+          headers: {
+            Authorization: `Bearer ${publicAnonKey}`,
+          },
+        });
+
+        const data = await response.json();
+
+        if (data.success && data.url) {
+          setAudioUrl(data.url);
+        } else {
+          console.warn(`Audio file not found: ${fileName}. Upload it via the admin panel.`);
+        }
+      } catch (error) {
+        console.error("Error fetching audio URL:", error);
+      } finally {
+        setLoadingUrl(false);
+      }
+    };
+
+    fetchAudioUrl();
+  }, [src]);
 
   // Initialize Web Audio API for visualization
   useEffect(() => {
@@ -83,16 +118,22 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
 
   const togglePlay = async () => {
     if (audioRef.current) {
-      if (audioContextRef.current?.state === 'suspended') {
-        await audioContextRef.current.resume();
+      try {
+        if (audioContextRef.current?.state === 'suspended') {
+          await audioContextRef.current.resume();
+        }
+        
+        if (isPlaying) {
+          audioRef.current.pause();
+        } else {
+          await audioRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      } catch (error) {
+        console.error("Playback error:", error);
+        // Reset playing state if playback fails
+        setIsPlaying(false);
       }
-      
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -139,7 +180,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
     <div className="w-full bg-black/60 border border-white/10 rounded-xl overflow-hidden backdrop-blur-md">
       <audio
         ref={audioRef}
-        src={src}
+        src={audioUrl}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
