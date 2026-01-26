@@ -146,10 +146,10 @@ export function Frameworks() {
             <span>System Architectures</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-medium tracking-tight mb-6">
-            The Anticoli Framework
+            Deep Dives and Distillations
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed">
-            Six systems of inquiry and creation, merging design, sound, data, and metaphysics into functional creative tools.
+          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl leading-relaxed">
+            Six creative inquiries merging design, sound, data, and metaphysics into functional sensory tools. Each system represents a unique methodology for translating abstract patterns into tangible experience—whether through harmonic algorithms, chronobiological mapping, or archetypal analysis. The unifying thread: a commitment to treating esoteric knowledge not as mysticism, but as rigorous data architecture. These frameworks transform symbolic systems into interactive instruments, proving that poetry and precision are not opposites, but partners in the pursuit of meaning-making.
           </p>
         </motion.div>
 

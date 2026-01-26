@@ -1,13 +1,14 @@
-import redCasketImage1 from "figma:asset/23152dd255ee2a6800db85decf244db7943df3f4.png";
-import redCasketImage2 from "figma:asset/d4513a3418d4919c11f87ca329ea25b2a51d355c.png";
-import redCasketImage3 from "figma:asset/2c2162f233b832a8b6ef9a90daf2c3b55bdd0303.png";
-import silasGoghImage1 from "figma:asset/7341f17e6b35eeea323ffc2bbe02e5d51e5b4529.png";
-import silasGoghImage2 from "figma:asset/b4266355c09a4d0a0997b8ee217b8056a2a4da1d.png";
-import silasGoghImage3 from "figma:asset/640a9c5bf9cb02b501d83cc4fd4c22f0ee3f1346.png";
-import brokebackImage1 from "figma:asset/1a664ec601f3bd5db3f54aaf38c99904e6b1ad8d.png";
-import brokebackImage2 from "figma:asset/edaf613b508011025f70edbae8b362ec2899ea99.png";
-import nadiaBiznessImage from "figma:asset/4da0d100e88d0c76a8be8415fefeaaba6d0cec52.png";
-import angBoccaImage from "figma:asset/10757684c4be1e02120f4c9d70fd5e93728cb999.png";
+// Placeholder images - replace with actual uploaded images via admin panel
+const redCasketImage1 = "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1080";
+const redCasketImage2 = "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1080";
+const redCasketImage3 = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1080";
+const silasGoghImage1 = "https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1080";
+const silasGoghImage2 = "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1080";
+const silasGoghImage3 = "https://images.unsplash.com/photo-1445985543470-41fba5c3144a?q=80&w=1080";
+const brokebackImage1 = "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1080";
+const brokebackImage2 = "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1080";
+const nadiaBiznessImage = "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=1080";
+const angBoccaImage = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1080";
 import { motion } from "motion/react";
 import { Mic2, Fingerprint, Activity, Radio, FileText, Music, Smile, ShoppingBag, Globe } from "lucide-react";
 import { useState } from "react";
