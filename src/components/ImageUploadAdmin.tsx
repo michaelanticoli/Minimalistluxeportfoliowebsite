@@ -55,6 +55,15 @@ export function ImageUploadAdmin() {
       return;
     }
 
+    // Validate file size (10MB limit)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    if (file.size > MAX_FILE_SIZE) {
+      const fileSizeMB = (file.size / 1024 / 1024).toFixed(2);
+      showMessage("error", `Image size (${fileSizeMB}MB) exceeds 10MB limit. Please compress or resize the image.`);
+      event.target.value = ""; // Reset input
+      return;
+    }
+
     try {
       setUploading(true);
       const formData = new FormData();

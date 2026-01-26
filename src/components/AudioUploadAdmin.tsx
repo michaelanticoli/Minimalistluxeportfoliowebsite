@@ -55,6 +55,15 @@ export function AudioUploadAdmin() {
       return;
     }
 
+    // Validate file size (50MB limit)
+    const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+    if (file.size > MAX_FILE_SIZE) {
+      const fileSizeMB = (file.size / 1024 / 1024).toFixed(2);
+      showMessage("error", `File size (${fileSizeMB}MB) exceeds 50MB limit. Please compress or use a smaller file.`);
+      event.target.value = ""; // Reset input
+      return;
+    }
+
     try {
       setUploading(true);
       const formData = new FormData();

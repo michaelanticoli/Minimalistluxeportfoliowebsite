@@ -168,6 +168,14 @@ app.post("/make-server-b5eacdbd/audio/upload", async (c) => {
       return c.json({ error: "File must be an audio file" }, 400);
     }
 
+    // Validate file size (50MB limit for Supabase Storage free tier)
+    const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB in bytes
+    if (file.size > MAX_FILE_SIZE) {
+      return c.json({ 
+        error: `File size exceeds maximum allowed size of 50MB. Your file is ${(file.size / 1024 / 1024).toFixed(2)}MB.` 
+      }, 413);
+    }
+
     // Convert File to ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
     const uint8Array = new Uint8Array(arrayBuffer);
@@ -182,6 +190,10 @@ app.post("/make-server-b5eacdbd/audio/upload", async (c) => {
 
     if (error) {
       console.error("Upload error:", error);
+      // Handle specific storage errors
+      if (error.message.includes("exceeded") || error.message.includes("413")) {
+        return c.json({ error: "File size exceeds storage limits. Please use a file smaller than 50MB." }, 413);
+      }
       return c.json({ error: `Upload failed: ${error.message}` }, 500);
     }
 
@@ -303,6 +315,14 @@ app.post("/make-server-b5eacdbd/images/upload", async (c) => {
       return c.json({ error: "File must be an image file" }, 400);
     }
 
+    // Validate file size (10MB limit for images)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB in bytes
+    if (file.size > MAX_FILE_SIZE) {
+      return c.json({ 
+        error: `Image size exceeds maximum allowed size of 10MB. Your file is ${(file.size / 1024 / 1024).toFixed(2)}MB.` 
+      }, 413);
+    }
+
     // Convert File to ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
     const uint8Array = new Uint8Array(arrayBuffer);
@@ -317,6 +337,10 @@ app.post("/make-server-b5eacdbd/images/upload", async (c) => {
 
     if (error) {
       console.error("Upload error:", error);
+      // Handle specific storage errors
+      if (error.message.includes("exceeded") || error.message.includes("413")) {
+        return c.json({ error: "Image size exceeds storage limits. Please use a file smaller than 10MB." }, 413);
+      }
       return c.json({ error: `Upload failed: ${error.message}` }, 500);
     }
 
