@@ -1,6 +1,5 @@
 import { AudioUploadAdmin } from "../components/AudioUploadAdmin";
 import { ImageUploadAdmin } from "../components/ImageUploadAdmin";
-import { Link } from "react-router";
 import { ArrowLeft, Music, Image as ImageIcon } from "lucide-react";
 import { motion } from "motion/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
@@ -14,13 +13,13 @@ export default function AudioAdmin() {
         animate={{ opacity: 1, x: 0 }}
         className="fixed top-6 left-6 z-50"
       >
-        <Link
-          to="/"
+        <a
+          href="/"
           className="flex items-center gap-2 px-4 py-2 bg-black/60 border border-white/20 rounded-full text-white/80 hover:text-white hover:bg-black/80 backdrop-blur-md transition-all group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span className="text-sm font-mono tracking-wider">BACK TO PORTFOLIO</span>
-        </Link>
+        </a>
       </motion.div>
 
       <div className="pt-24 pb-12 px-6">

@@ -22,16 +22,19 @@ Your portfolio now uses Supabase Storage to manage MP3 files for your persona au
 ### Step 2: Upload Files
 1. Click the upload zone
 2. Select your MP3 file
-3. Name it to match your persona code (e.g., `persona1.mp3`)
+3. Name it to match the persona filename listed below (e.g., `ang-bocca.mp3`)
 4. The file uploads to Supabase Storage
 5. Repeat for all persona audio files
 
 ### Step 3: File Naming Convention
-Match these filenames to your persona `audioSrc` values in your code:
+Use these exact filenames to match the `audioSrc` values in your code:
 
-Example:
-- If your code has: `audioSrc: "/audio/persona1.mp3"`
-- Upload file named: `persona1.mp3`
+- `ang-bocca.mp3` = Ang Bocca
+- `silas-gogh.mp3` = Silas Gogh
+- `red-casket-club.mp3` = Red Casket Club
+- `brokeback-kerouac.mp3` = Brokeback Kerouac
+- `nadia-bizness.mp3` = Nadia Bizness
+- `amon-ajari.mp3` = Amon Ajari
 
 The AudioPlayer component automatically:
 1. Extracts the filename from the path

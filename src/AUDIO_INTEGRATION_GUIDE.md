@@ -29,19 +29,19 @@ Your portfolio now features a **custom Web Audio API-powered player** with:
 
 #### **Option 1: Self-Hosted (Recommended for Full Control)**
 
-1. **Create audio directory:**
+1. **Create audio directory (if self-hosting locally):**
    ```
    /public/audio/
    ```
 
-2. **Add your files:**
+2. **Add your files with the exact names used in code:**
    ```
-   /public/audio/ang_bocca_demo.mp3
-   /public/audio/silas_gogh_demo.mp3
-   /public/audio/rcc_demo.mp3
-   /public/audio/bbk_demo.mp3
-   /public/audio/nadia_demo.mp3
-   /public/audio/amon_demo.mp3
+   /public/audio/ang-bocca.mp3
+   /public/audio/silas-gogh.mp3
+   /public/audio/red-casket-club.mp3
+   /public/audio/brokeback-kerouac.mp3
+   /public/audio/nadia-bizness.mp3
+   /public/audio/amon-ajari.mp3
    ```
 
 3. **File format requirements:**
@@ -50,9 +50,9 @@ Your portfolio now features a **custom Web Audio API-powered player** with:
    - **Bitrate:** 192-320 kbps recommended
    - **Sample rate:** 44.1 kHz or 48 kHz
 
-4. **Already configured in code:**
+4. **Already configured in code (sample):**
    ```typescript
-   audioSrc: "/audio/silas_gogh_demo.mp3"
+   audioSrc: "silas-gogh.mp3"
    ```
 
 ---
@@ -73,7 +73,7 @@ Your portfolio now features a **custom Web Audio API-powered player** with:
 
 **Cloudflare R2 Example:**
 ```
-https://pub-[bucket-id].r2.dev/silas_gogh_demo.mp3
+https://pub-[bucket-id].r2.dev/silas-gogh.mp3
 ```
 
 ---
@@ -97,12 +97,12 @@ https://pub-[bucket-id].r2.dev/silas_gogh_demo.mp3
 
 | **Persona** | **Track Title** | **File Path** | **Status** |
 |------------|----------------|--------------|-----------|
-| Ang Bocca | Synthetic Emotion Protocol | `/audio/ang_bocca_demo.mp3` | Placeholder |
-| Silas Gogh | Cold Blooded | `/audio/silas_gogh_demo.mp3` | Placeholder |
-| Red Casket Club | Yawn on the Clock | `/audio/rcc_demo.mp3` | Placeholder |
-| Brokeback Kerouac | Semicircle Rooms | `/audio/bbk_demo.mp3` | Placeholder |
-| Nadia Bizness | Circuit Manifesto Dub | `/audio/nadia_demo.mp3` | Placeholder |
-| Amon Ajari | Green New Beat | `/audio/amon_demo.mp3` | Placeholder |
+| Ang Bocca | Synthetic Emotion Protocol | `ang-bocca.mp3` | Placeholder |
+| Silas Gogh | Cold Blooded | `silas-gogh.mp3` | Placeholder |
+| Red Casket Club | Yawn on the Clock | `red-casket-club.mp3` | Placeholder |
+| Brokeback Kerouac | Semicircle Rooms | `brokeback-kerouac.mp3` | Placeholder |
+| Nadia Bizness | Circuit Manifesto Dub | `nadia-bizness.mp3` | Placeholder |
+| Amon Ajari | Green New Beat | `amon-ajari.mp3` | Placeholder |
 
 ---
 
@@ -116,7 +116,7 @@ https://pub-[bucket-id].r2.dev/silas_gogh_demo.mp3
   name: "Silas Gogh",
   role: "Southern Soul Theorist",
   trackTitle: "Cold Blooded",
-  audioSrc: "/audio/silas_gogh_demo.mp3", // ← Update this path
+  audioSrc: "silas-gogh.mp3", // ← Update this path (matches Supabase storage filename)
   // ... rest of data
 }
 ```

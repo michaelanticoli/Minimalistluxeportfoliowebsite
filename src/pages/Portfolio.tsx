@@ -18,7 +18,6 @@ import {
   Settings,
 } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router";
 import { projectId, publicAnonKey } from "../utils/supabase/info";
 
 export default function Portfolio() {
@@ -513,13 +512,13 @@ export default function Portfolio() {
             <div className="text-sm tracking-widest uppercase">
               Michael Anticoli • V1.0
             </div>
-            <Link 
-              to="/admin/audio"
+            <a
+              href="/admin/audio"
               className="opacity-30 hover:opacity-100 transition-opacity group"
               title="Asset Admin"
             >
               <Settings className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </footer>
