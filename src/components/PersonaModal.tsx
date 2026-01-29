@@ -117,7 +117,7 @@ export function PersonaModal({ isOpen, onClose, data }: PersonaModalProps) {
                     </h3>
                     <AudioPlayer 
                       src={data.audioSrc} 
-                      title={data.trackTitle}
+                      title="Sonic Signature"
                     />
                     <p className="text-xs text-white/20 mt-3 font-mono text-center">
                       ⬢ Web Audio API synthesis engine initialized ⬢

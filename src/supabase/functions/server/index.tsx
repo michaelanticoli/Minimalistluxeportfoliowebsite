@@ -219,6 +219,26 @@ app.get("/make-server-b5eacdbd/audio/:fileName", async (c) => {
       return c.json({ error: "File name is required" }, 400);
     }
 
+    // First check if file exists
+    const { data: fileList, error: listError } = await supabase.storage
+      .from(AUDIO_BUCKET)
+      .list("", { search: fileName });
+
+    if (listError) {
+      console.error(`Error checking if ${fileName} exists:`, listError);
+    }
+
+    const fileExists = fileList && fileList.length > 0;
+
+    if (!fileExists) {
+      console.log(`Audio file not found in storage: ${fileName}`);
+      return c.json({ 
+        success: false, 
+        error: "File not found",
+        message: `Upload ${fileName} via /admin/audio` 
+      }, 404);
+    }
+
     // Generate signed URL (valid for 1 hour)
     const { data, error } = await supabase.storage
       .from(AUDIO_BUCKET)

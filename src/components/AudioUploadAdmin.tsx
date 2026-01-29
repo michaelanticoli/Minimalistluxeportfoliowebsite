@@ -81,7 +81,7 @@ export function AudioUploadAdmin() {
       const data = await response.json();
 
       if (data.success) {
-        showMessage("success", `Successfully uploaded: ${file.name}`);
+        showMessage("success", `Successfully uploaded: ${file.name}. Click "RETRY LOAD" on audio players to refresh.`);
         await loadAudioFiles();
       } else {
         showMessage("error", data.error || "Upload failed");
@@ -297,8 +297,15 @@ export function AudioUploadAdmin() {
             ⬢ USAGE INSTRUCTIONS
           </h3>
           <ul className="space-y-2 text-xs text-white/40 font-mono">
-            <li>• Upload your persona audio files with exact names matching your code</li>
-            <li>• File names should match: persona1.mp3, persona2.mp3, etc.</li>
+            <li>• Upload your persona audio files with exact names:</li>
+            <li className="ml-4 text-emerald-400/60">
+              persona1.mp3 = Ang Bocca<br/>
+              persona2.mp3 = Silas Gogh<br/>
+              persona3.mp3 = Red Casket Club<br/>
+              persona4.mp3 = Brokeback Kerouac<br/>
+              persona5.mp3 = Nadia Bizness<br/>
+              persona6.mp3 = Amon Ajari
+            </li>
             <li>• Files are stored securely in Supabase Storage</li>
             <li>• Audio players will automatically fetch signed URLs from the server</li>
             <li>• Uploaded files persist across deployments</li>

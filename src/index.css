@@ -298,6 +298,9 @@
     letter-spacing: inherit;
     color: inherit;
     opacity: 1;
+    --lightningcss-light: initial;
+    --lightningcss-dark: ;
+    color-scheme: light;
     background-color: #0000;
     border-radius: 0;
   }
@@ -309,6 +312,9 @@
     letter-spacing: inherit;
     color: inherit;
     opacity: 1;
+    --lightningcss-light: initial;
+    --lightningcss-dark: ;
+    color-scheme: light;
     background-color: #0000;
     border-radius: 0;
   }
@@ -743,6 +749,10 @@
 
   .ml-0\.5 {
     margin-left: calc(var(--spacing) * .5);
+  }
+
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
   }
 
   .line-clamp-3 {
@@ -2380,6 +2390,16 @@
 
   .text-emerald-400 {
     color: var(--color-emerald-400);
+  }
+
+  .text-emerald-400\/60 {
+    color: color-mix(in srgb, oklch(.765 .177 163.223) 60%, transparent);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-emerald-400\/60 {
+      color: color-mix(in oklab, var(--color-emerald-400) 60%, transparent);
+    }
   }
 
   .text-emerald-500 {
